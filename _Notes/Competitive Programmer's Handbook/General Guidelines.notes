@@ -1,0 +1,24 @@
+
+-= String Input =-
+
+    *Accepting Input with Spaces*
+
+    !Must! use getline(cin, string) whenever your input string has spaces!
+
+    ! However, there's a catch ! -- getline throws off for loops if it's inside. 
+    Take this code:
+
+    [c]
+    int n; cin >> n;
+
+    for (...)
+    {
+        ...
+        getline (cin, n);
+    }
+    [end]
+
+    getline will immediately try reading after n on the same line, and will thus shut down.
+    We must put a 
+        ==> cin >> ws;
+    After the cin >> n to fix this issue.

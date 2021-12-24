@@ -7,10 +7,10 @@ typedef long long ll;
 
 int main()
 {
-    int x,y,n;
+    ll x,y,n;
     cin >> x >> y >> n;
 
-    for (int i = 1; i < n+1; i++)
+    for (ll i = 1; i < n+1; i++)
     {
         string s;
         if (i % x == 0 && i % y == 0)

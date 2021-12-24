@@ -1,0 +1,166 @@
+
+-= Dynamic Arrays =-
+
+    *<vector>*
+        Dynamic arrays are <vector> structures in C++.
+            They operate pretty much like normal arrays.
+
+        ==> Number of elements in array:
+            v.size();
+        
+        ==> Iterate through a vector:
+            [c]
+            for (auto x : v) {
+                cout << x << endl;
+            }
+            [end]
+        
+        ==> Adding/removing elements from back:
+            v.push_back(x), v.pop_back(x);
+
+            TC: O(1)
+        
+        ==> Create vector of x elements with initial value for each element n:
+            vector<int> v(x,n);
+
+
+-= Set Structures =-
+
+    C++ 'set' is based on a balanced BST and operations are O(logn).
+        ==> 'set' is our BST in C++
+
+        TC: O(logn)
+
+    C++ 'unordered_set' is based on hashing and operate on O(1) time on average.
+        ==> 'unordered_set' is our hash table in C++
+
+        TC: O(1)
+
+    *set*
+        set<int> s;
+
+        ==> Add element to set:
+            s.insert(x);
+        
+        ==> Instances of element in set:
+            s.count(x);
+
+            Note that elements in a set are ! distinct ! , so count only ever returns a 0 or 1.
+
+        ==> Remove element from set:
+            s.erase(x);
+        
+        
+        Note that we cannot use [] notaton to access elements in a set.
+
+    *multiset*
+        multiset<int> s;
+
+        Practically the same as set but we can have multiple instances.
+        erase() erases all instances.
+
+        ==> Erase one instance in a multiset:
+            s.erase(s.find(x));
+
+-= Iterators and Ranges =-
+
+    ==> Beginning and ending of vector 
+        v.begin(), v.end();
+
+        ! .end() targets 1 value after the last value in the set. ! .end()-- will return
+        the actual value we're looking for.
+
+    ==> Beginning and offset of array
+        a, a+n 
+    
+    *set iterators*
+
+        ==> Setting up iterators
+
+            set<int>::iterator it = s.begin();
+            --> Can also be written 
+                auto it = s.begin();
+
+            Iterators point to elements of a set. We can use dereference operator (*) to 
+            access the elements.
+                // *it == 3;
+            
+            Iterators can be moved with ++ / --.
+
+        ==> We can iterate through an entire set.
+            [c]
+            for (auto it = s.begin(); it != s.end(); it++)
+            {
+                cout << *it << endl;
+            }
+            [end]
+        
+        ==> Largest element in a set:
+
+            [c]
+            auto it = s.end(); it--;
+            cout << *it << endl;
+            [end]
+        
+        ==> Find element in set, return iterator:
+
+            [c]
+            auto it = s.find(x);
+            if (it==s.end())
+            {
+                // x isn't found
+            }
+            [end]
+
+            Note, that if find(x) doesn't find the element, it returns end.
+        
+-= Other Structures =-
+
+    *Bitset*
+        bitset<n> s;
+
+        Bitset is an array where each value is 0 or 1.
+    
+    *Deque*
+        deque<int> d;
+
+        Dynamic array, like a vector, but can push/pop_front(x).
+
+    *Stack*
+        stack<int> s;
+
+        ==> Access top element:
+            s.top();
+    
+    *Queue*
+        queue<int> q;
+
+        Can .push(x) to the end, and .pop(x) from the front.
+
+        ==> Access front element:
+            q.front();
+    
+    *Priority queue*
+        priority_queue<int> q;
+
+        Maintains the highest element at the front. 
+            .top() contains this highest element.
+        
+        ==> Priority queue to maintain/remove smallest element:
+            priority_queue<int,vector<int>,greater<int>> q;
+        
+    
+
+
+
+        
+        
+
+
+    
+        
+
+
+
+        
+
