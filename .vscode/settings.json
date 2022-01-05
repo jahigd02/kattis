@@ -45,6 +45,10 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "algorithm": "cpp",
+<<<<<<< HEAD
+=======
+        "set": "cpp",
+>>>>>>> refs/remotes/origin/main
         "xtree": "cpp"
     }
 }
